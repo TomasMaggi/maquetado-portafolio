@@ -1,7 +1,26 @@
 /*typing animation control  */
 
-var typed = new Typed(".typing", {
-    strings: ["FrontEnd", "BackEnd", "FullStack"],
+let t1 = new Typed(".typing1", {
+    // i am ..
+    strings: [
+        "Front End",
+        "Back End",
+        "Full Stack"
+    ],
+    typeSpeed: 100,
+    BackSpeed: 60,
+    loop: true
+});
+
+let t2 = new Typed(".typing2", {
+    // i do ..
+    strings: [
+        "unit testing",
+        "deploying",
+        "api consumption",
+        "db query",
+        "pull requests"
+    ],
     typeSpeed: 100,
     BackSpeed: 60,
     loop: true
