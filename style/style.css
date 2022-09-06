@@ -310,6 +310,10 @@ ul {
     margin-right: 15px;
 }
 
+.aside .nav p {
+    cursor: pointer;
+}
+
 /* home style */
 .home {
     min-height: 100vh;

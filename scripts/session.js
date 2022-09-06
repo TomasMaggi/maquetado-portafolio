@@ -7,14 +7,16 @@ const loginbtn = document.querySelector(".logbutton");
 const usernameInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
 
-const login = document.querySelector(".login");
-const logout = document.querySelector(".logout");
+const login = document.querySelector(".loginselector");
+const logout = document.querySelector(".logoutselector");
 
 const username = "admin";
 const password = "admin";
 
 let usernameValid = false;
 let passwordValid = false;
+
+let SESSION = false;
 
 loginbtn.addEventListener("click", () => {
 
@@ -39,10 +41,28 @@ loginbtn.addEventListener("click", () => {
     if (usernameValid && passwordValid) {
         session = true;
         logout.classList.remove("hidden");
-        login.classList.add("hidden")
+        login.classList.add("hidden");
 
         document.querySelector(".login").classList.remove("active");
+        //document.querySelector(".login").classList.add("back-section");
+
         document.querySelector(".home").classList.add("active");
-        window.location = "#home";
+        //document.querySelector(".home").classList.remove("back-section");
+
+        session_token();
+
+        showSection(document.querySelector(".home"));
     }
 });
+
+logout.addEventListener("click", () => {
+    session = false;
+    logout.classList.add("hidden");
+    login.classList.remove("hidden");
+
+    session_token();
+});
+
+function session_token() {
+    return;
+}
