@@ -600,6 +600,7 @@ h3.my-profession {
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    padding-bottom: 10px;
 }
 
 .portfolio .portfolio-item-inner .title {
@@ -616,6 +617,12 @@ h3.my-profession {
     font-weight: 200;
     color: var(--text-black-700);
     padding: 10px;
+}
+
+.portfolio .portfolio-item-inner .link {
+    font-weight: 200;
+    color: var(--text-black-700);
+    padding-left: 10px;
 }
 
 
