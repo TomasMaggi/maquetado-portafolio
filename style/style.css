@@ -602,6 +602,23 @@ h3.my-profession {
     cursor: pointer;
 }
 
+.portfolio .portfolio-item-inner .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    text-align: center;
+    border-bottom: 1px solid var(--bg-black-50);
+}
+
+.portfolio .portfolio-item-inner .info {
+    margin-bottom: 30px;
+    font-weight: 200;
+    color: var(--text-black-700);
+    padding: 10px;
+}
+
+
 .portfolio .portfolio-item-inner .portfolio-img img {
     width: 100%;
     display: block;
