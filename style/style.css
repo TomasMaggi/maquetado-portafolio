@@ -159,6 +159,10 @@ ul {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
+.bad {
+    background-color: rgba(221, 4, 4, 0.823) !important;
+}
+
 /* aside style*/
 .aside {
     width: 270px;

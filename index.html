@@ -29,6 +29,9 @@
     <!-- style switcher script -->
     <script src="scripts/style-switcher.js" defer></script>
 
+    <!-- pseudo session -->
+    <script src="scripts/session.js" defer></script>
+
     <!-- typing script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
         integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw=="
@@ -53,7 +56,9 @@
                 <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
                 <li><a href="#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
                 <li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
-                <li><a href="#login"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+                <li class="login"><a href="#login"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+                <li class="logout hidden"><a><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
             </ul>
         </div>
         <!-- aside menu end -->
@@ -61,7 +66,7 @@
         <!-- main content-->
         <div class="main-content">
             <!-- home section -->
-            <section class="home section active" id="home">
+            <section class="home section" id="home">
                 <div class="container">
                     <div class="row">
                         <div class="home-info padd-15">
@@ -343,15 +348,14 @@
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="text" name="subject" id="" class="form-control" placeholder="Name">
+                                        <input type="text" name="subject" class="form-control" placeholder="Name">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                        <textarea name="body" id="" class="form-control"
-                                            placeholder="Message"></textarea>
+                                        <textarea name="body" class="form-control" placeholder="Message"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -367,7 +371,7 @@
             </section>
             <!-- contact section end-->
             <!-- login section -->
-            <section class="login section" id="login">
+            <section class="login section active" id="login">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -375,29 +379,29 @@
                         </div>
                     </div>
                     <!-- login form -->
-                    <form method="post" class="row">
+                    <div class="row">
                         <div class="login-form padd-15">
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
                                         <label for="username" class="label">username: </label>
-                                        <input type="text" name="subject" id="username" class="form-control"
-                                            placeholder="Name">
+                                        <input type="text" name="username" id="username" class="form-control"
+                                            placeholder="username">
                                     </div>
                                     <div class="form-group">
                                         <label for="password" class="label">password: </label>
-                                        <input type="text" name="subject" id="password" class="form-control"
-                                            placeholder="Name">
+                                        <input type="text" name="password" id="password" class="form-control"
+                                            placeholder="password">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item.col-12 padd-15">
-                                    <button type="submit" value="Send" class="btn logbutton">login</button>
+                                    <button class="btn logbutton">login</button>
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                     <!-- login form end -->
                 </div>
             </section>
@@ -424,6 +428,8 @@
             <span class="color-5" onclick="setActiveStyle('color-5')"></span>
         </div>
     </div>
+
+    <div class="hidden session-handler"></div>
     <!-- style switcher end -->
 </body>
 
