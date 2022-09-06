@@ -8,6 +8,17 @@
     --text-black-700: #504e70;
 }
 
+.edit-fieldtext {
+    width: 100%;
+    border-radius: 25px;
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    padding: 25px;
+    font-size: 16px;
+    color: var(--text-black-700);
+    transition: all o.3s ease;
+}
+
 body.dark {
     --bg-black-900: #151515;
     --bg-black-100: #222222;

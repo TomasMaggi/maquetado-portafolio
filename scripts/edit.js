@@ -2,10 +2,12 @@ function changeToEdit(node) {
 
     const text = document.createElement("textarea");
     text.innerText = node.innerText;
+    text.classList.add("edit-fieldtext");
 
     const btn = document.createElement("button");
     btn.addEventListener("click", () => save(node, btn, text));
     btn.innerText = "save";
+    btn.classList.add("btn");
 
     //console.log(str);
 
