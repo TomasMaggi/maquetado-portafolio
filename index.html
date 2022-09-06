@@ -32,10 +32,14 @@
     <!-- pseudo session -->
     <script src="scripts/session.js" defer></script>
 
+    <!-- handle edit paras -->
+    <script src="scripts/edit.js" defer></script>
+
     <!-- typing script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
         integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="scripts/main.js" defer></script>
 
 </head>
@@ -72,7 +76,8 @@
                         <div class="home-info padd-15">
                             <h3 class="hello">Hi, my name is <span class="name">Tomas Maggi</span></h3>
                             <h3 class="my-profession">I'am a <span class="typing typing1"></span></h3>
-                            <p>I am an engineering student who designs solutions using my knowledge in both frontend and
+                            <p>I am an engineering student who designs solutions using my
+                                knowledge in both frontend and
                                 backend.</p>
                         </div>
                         <div class="home-img padd-15">
@@ -95,7 +100,11 @@
                             <div class="row">
                                 <div class="about-text padd-15">
                                     <h3>I do <span class="typing typing2"></span></h3>
-                                    <p>I consider myself a practical person who loves to learn new ways to approach a
+                                    <p onclick="changeToEdit(this)">I consider myself a practical person
+                                        who loves to
+                                        learn
+                                        new ways
+                                        to approach a
                                         problem, these are some of the technologies I currently use to solve them:</p>
                                 </div>
                             </div>
@@ -266,7 +275,8 @@
                                     <img src="images/portfolio/istockphoto-510245477-612x612.jpg" alt="">
                                 </div>
                                 <h3 class="title">finance.py</h3>
-                                <p class="info">an monolitic webapp maded with flask and sqlite when you can "buy" and
+                                <p class="info">an monolitic webapp maded with flask and sqlite when you can
+                                    "buy" and
                                     "sell" stocks</p>
                                 <p class="link">source code <a href="#">here</a></p>
                                 <p class="link">live demo <a href="#">here</a></p>
@@ -280,7 +290,8 @@
                                     <img src="images/portfolio/istockphoto-510245477-612x612.jpg" alt="">
                                 </div>
                                 <h3 class="title">portfolio</h3>
-                                <p class="info">a page to show my projects, with editable content, themes and more,
+                                <p class="info">a page to show my projects, with editable content, themes and
+                                    more,
                                     maded with angular</p>
                                 <p class="link">source code <a href="#">here</a></p>
                                 <p class="link">live demo <a href="#">here</a></p>
