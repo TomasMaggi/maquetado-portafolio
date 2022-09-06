@@ -14,7 +14,7 @@ const username = "admin";
 const password = "admin";
 
 let usernameValid = false;
-let passwordValid = false
+let passwordValid = false;
 
 loginbtn.addEventListener("click", () => {
 
