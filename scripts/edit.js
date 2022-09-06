@@ -1,11 +1,11 @@
-function changeToEdit(node) {
+function changePara(node) {
 
     const text = document.createElement("textarea");
     text.innerText = node.innerText;
     text.classList.add("edit-fieldtext");
 
     const btn = document.createElement("button");
-    btn.addEventListener("click", () => save(node, btn, text));
+    btn.addEventListener("click", () => savePara(node, text, btn));
     btn.innerText = "save";
     btn.classList.add("btn");
 
@@ -17,12 +17,45 @@ function changeToEdit(node) {
     node.parentNode.appendChild(btn);
 }
 
-function save(node, btn, text) {
-    console.log(node);
+function savePara(node, ...args) {
+    //console.log(node);
 
     node.classList.toggle("hidden");
-    node.innerText = text.value;
+    node.innerText = args[0].value;
 
-    node.parentNode.removeChild(btn);
-    node.parentNode.removeChild(text);
+    for (let Node of args) {
+        node.parentNode.removeChild(Node);
+    }
+}
+
+
+function changeBar(node) {
+
+    const range = document.createElement("input");
+    range.type = "range";
+
+    range.classList.add("edit-bar");
+
+    const btn = document.createElement("button");
+    btn.addEventListener("click", () => saveBar(node, range, btn));
+    btn.innerText = "save";
+    btn.classList.add("btn");
+
+    node.classList.toggle("hidden");
+
+    node.parentNode.appendChild(range);
+    node.parentNode.appendChild(btn);
+
+}
+
+// the first args is the node with the info to resave, the rest are auxiliar
+function saveBar(node, ...args) {
+    node.classList.toggle("hidden");
+
+    for (let Node of args) {
+        node.parentNode.removeChild(Node);
+    }
+
+    node.querySelector(".progress-in").style.width = String(args[0].value) + "%";
+    node.querySelector(".skill-percent").innerText = args[0].value;
 }

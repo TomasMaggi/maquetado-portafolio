@@ -19,6 +19,14 @@
     transition: all o.3s ease;
 }
 
+.edit-bar[type=range] {
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--bg-black-50);
+    appearance: none;
+
+}
+
 body.dark {
     --bg-black-900: #151515;
     --bg-black-100: #222222;
