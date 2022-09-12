@@ -1,4 +1,3 @@
-# Plantilla para el Portafolio
+# Maquetado para el portafolio
 
-
-La hice paso a paso con este tutorial: https://www.youtube.com/watch?v=zJE-ze4TfXc
+este es un prototipo de mi portafolio, con todas las funciones que se deberan luego implementar cuando se haga la migracion a Angular
