@@ -16,15 +16,12 @@ const password = "admin";
 let usernameValid = false;
 let passwordValid = false;
 
-let SESSION = false;
-
-loginbtn.addEventListener("click", () => {
-
+function validateLogin() {
     //validate "login"
-
     if (usernameInput.value !== username) {
         usernameInput.classList.add("bad");
         usernameValid = false;
+        usernameInput.value = "";
     } else {
         usernameInput.classList.remove("bad");
         usernameValid = true;
@@ -33,36 +30,38 @@ loginbtn.addEventListener("click", () => {
     if (passwordInput.value !== password) {
         passwordInput.classList.add("bad");
         passwordValid = false;
+        passwordInput.value = "";
     } else {
         passwordInput.classList.remove("bad");
         passwordValid = true;
     }
 
+    // sucessfull loged
     if (usernameValid && passwordValid) {
-        session = true;
-        logout.classList.remove("hidden");
-        login.classList.add("hidden");
-
-        document.querySelector(".login").classList.remove("active");
-        //document.querySelector(".login").classList.add("back-section");
-
-        document.querySelector(".home").classList.add("active");
-        //document.querySelector(".home").classList.remove("back-section");
-
-        session_token();
-
-        showSection(document.querySelector(".home"));
+        Cookies.set("session", true);
+        window.location.reload();
     }
-});
+}
+
+loginbtn.addEventListener("click", validateLogin);
 
 logout.addEventListener("click", () => {
-    session = false;
-    logout.classList.add("hidden");
-    login.classList.remove("hidden");
-
-    session_token();
+    Cookies.set("session", false);
+    window.location.reload();
 });
 
-function session_token() {
-    return;
-}
+// checks if is logged everytime the page is loaded to show edit options
+document.addEventListener("DOMContentLoaded", () => {
+    // checks with true cause the value is a string and can be anything
+    if (Cookies.get("session") === "true") {
+        login.classList.add("hidden");
+        logout.classList.remove("hidden");
+    } else {
+        login.classList.remove("hidden");
+        logout.classList.add("hidden");
+    }
+
+    // clean login input
+    usernameInput.value = "";
+    passwordInput.value = "";
+});
