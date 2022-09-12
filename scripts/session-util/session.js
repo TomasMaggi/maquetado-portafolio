@@ -56,12 +56,49 @@ document.addEventListener("DOMContentLoaded", () => {
     if (Cookies.get("session") === "true") {
         login.classList.add("hidden");
         logout.classList.remove("hidden");
+        addEdits();
     } else {
         login.classList.remove("hidden");
         logout.classList.add("hidden");
+        removeEdits();
     }
 
     // clean login input
     usernameInput.value = "";
     passwordInput.value = "";
 });
+
+function addEdits() {
+    console.log("added");
+
+    const paras = document.querySelectorAll(".editablePara");
+    const bars = document.querySelectorAll(".editableBar");
+
+    for (const para of paras) {
+        para.addEventListener("click", function () { changePara(this) });
+        para.classList.add("editable-content");
+    }
+
+    for (const bar of bars) {
+        bar.addEventListener("click", function () { changeBar(this) });
+        bar.classList.add("editable-content");
+    }
+
+
+}
+
+function removeEdits() {
+    console.log("removed");
+    const paras = document.querySelectorAll(".editablePara");
+    const bars = document.querySelectorAll(".editableBar");
+
+    for (const para of paras) {
+        para.removeEventListener("click", function () { changePara(this) });
+        para.classList.remove("editable-content");
+    }
+
+    for (const bar of bars) {
+        bar.removeEventListener("click", function () { changeBar(this) });
+        bar.classList.remove("editable-content");
+    }
+}

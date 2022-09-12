@@ -28,11 +28,19 @@ function savePara(node, ...args) {
     }
 }
 
+function percentwidth(elem) {
+    var pa = elem.offsetParent || elem;
+    return ((elem.offsetWidth / pa.offsetWidth) * 100).toFixed(2);
+}
 
 function changeBar(node) {
-
+    console.log("changing")
     const range = document.createElement("input");
     range.type = "range";
+
+    const bar = node.querySelector(".progress-in");
+    console.log(percentwidth(bar));
+    range.value = percentwidth(bar);
 
     range.classList.add("edit-bar");
 
